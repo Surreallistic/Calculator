@@ -11,6 +11,7 @@ public class Controller {
 
     public void handleDigitalNumber(ActionEvent actionEvent) {
         displayField.setText(getUsedSymbol(actionEvent));
+        System.out.println();
     }
 
     public void handleCalcOperation(ActionEvent actionEvent) {
