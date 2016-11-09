@@ -10,11 +10,11 @@ public class Controller {
 
 
     public void handleDigitalNumber(ActionEvent actionEvent) {
-        System.out.println(getUsedSymbol(actionEvent));
+        displayField.setText(getUsedSymbol(actionEvent));
     }
 
     public void handleCalcOperation(ActionEvent actionEvent) {
-        System.out.println(getUsedSymbol(actionEvent));
+        displayField.setText(getUsedSymbol(actionEvent));
     }
 
     private String getUsedSymbol(ActionEvent event) {
