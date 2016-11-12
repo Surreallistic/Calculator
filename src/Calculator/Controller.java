@@ -7,10 +7,11 @@ import javafx.scene.control.TextField;
 public class Controller {
 
     public TextField displayField;
-
+    private String prevValue;
+    private String nextValue;
 
     public void handleDigitalNumber(ActionEvent actionEvent) {
-        displayField.setText(getUsedSymbol(actionEvent));
+        String digtNumb = getUsedSymbol(actionEvent);
     }
 
     public void handleCalcOperation(ActionEvent actionEvent) {
@@ -20,4 +21,5 @@ public class Controller {
     private String getUsedSymbol(ActionEvent event) {
         return ((Button)event.getSource()).getText();
     }
+
 }
