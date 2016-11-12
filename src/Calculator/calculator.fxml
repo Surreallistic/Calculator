@@ -40,7 +40,7 @@
             <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
             <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="=" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
             <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <TextField id="text-field" fx:id="displayField" alignment="CENTER_RIGHT" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@../default.css" GridPane.columnSpan="3" GridPane.rowIndex="1">
+            <TextField id="text-field-result" fx:id="displayFieldResult" alignment="CENTER_RIGHT" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@../default.css" GridPane.columnSpan="3" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="6.0" />
                </GridPane.margin></TextField>
@@ -52,10 +52,13 @@
                   <Insets bottom="19.0" left="45.0" />
                </GridPane.margin>
             </Button>
-            <TextField id="text-field" fx:id="displayField1" alignment="CENTER_RIGHT" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@../default.css" GridPane.columnSpan="3">
+            <TextField id="text-field-operation" fx:id="displayFieldMemory" alignment="CENTER_RIGHT" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@../default.css" GridPane.columnSpan="3">
                <GridPane.margin>
                   <Insets left="6.0" />
-               </GridPane.margin></TextField>
+               </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></TextField>
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

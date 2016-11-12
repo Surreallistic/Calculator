@@ -24,13 +24,11 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-
     public static void main(String[] args) {
         launch(args);
     }
 
     private void makeMovableWindow(Parent root, Stage stage) {
-
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -45,6 +43,5 @@ public class Main extends Application {
                 stage.setY(event.getScreenY() - yOffset);
             }
         });
-
     }
 }
