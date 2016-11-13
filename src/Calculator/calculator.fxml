@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculator.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculator.Controller">
    <children>
-      <GridPane id="pane" layoutX="14.0" layoutY="14.0" prefHeight="372.0" prefWidth="300.0" stylesheets="@../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <GridPane id="pane" layoutX="14.0" layoutY="14.0" prefHeight="442.0" prefWidth="455.0" stylesheets="@../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
@@ -24,41 +27,75 @@
             <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="7" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="/" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="-" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="=" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <TextField id="text-field-result" fx:id="displayFieldResult" alignment="CENTER_RIGHT" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@../default.css" GridPane.columnSpan="3" GridPane.rowIndex="1">
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="7" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="8" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="9" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="*" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="5" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="6" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="/" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="3" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="-" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="." GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="=" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+            <TextField id="text-field-result" fx:id="displayFieldResult" alignment="CENTER_RIGHT" editable="false" maxHeight="42.0" minHeight="42.0" prefHeight="42.0" stylesheets="@../default.css" GridPane.columnSpan="5" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="6.0" />
-               </GridPane.margin></TextField>
-            <Button fx:id="closeButton" contentDisplay="CENTER" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleCloseWindow" prefHeight="22.0" prefWidth="22.0" text="X" textAlignment="CENTER" GridPane.columnIndex="3">
+                  <Insets bottom="5.0" left="50.0" right="50.0" />
+               </GridPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <SepiaTone>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </SepiaTone>
+               </effect></TextField>
+            <Button fx:id="closeButton" contentDisplay="CENTER" maxHeight="22.0" maxWidth="22.0" minHeight="22.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleCloseWindow" prefHeight="22.0" prefWidth="22.0" textAlignment="CENTER" GridPane.columnIndex="4">
                <font>
                   <Font name="Lucida Handwriting Italic" size="15.0" />
                </font>
                <GridPane.margin>
                   <Insets bottom="19.0" left="45.0" />
                </GridPane.margin>
+               <effect>
+                  <Shadow blurType="TWO_PASS_BOX" color="RED">
+                     <input>
+                        <Shadow />
+                     </input>
+                  </Shadow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
             </Button>
-            <TextField id="text-field-operation" fx:id="displayFieldMemory" alignment="CENTER_RIGHT" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@../default.css" GridPane.columnSpan="3">
+            <TextField id="text-field-operation" fx:id="displayFieldMemory" alignment="CENTER_RIGHT" editable="false" maxHeight="42.0" minHeight="42.0" prefHeight="42.0" stylesheets="@../default.css" GridPane.columnSpan="5">
                <GridPane.margin>
-                  <Insets left="6.0" />
+                  <Insets left="50.0" right="50.0" top="5.0" />
                </GridPane.margin>
                <font>
                   <Font size="10.0" />
-               </font></TextField>
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <SepiaTone>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </SepiaTone>
+               </effect></TextField>
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="C" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" text="CE" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button maxHeight="50.0" maxWidth="60.0" minHeight="50.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDigitalNumber" prefHeight="50.0" prefWidth="60.0" stylesheets="@../default.css" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
