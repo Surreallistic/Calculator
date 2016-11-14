@@ -8,19 +8,21 @@ import javafx.stage.Stage;
 public class Controller {
 
     //        currentResult = currentResult.replaceAll("\\D+",""); // get number, delete any other sign
-    private boolean statusClearResultField = true;
-    private boolean statusPerformCalcOperation = false;
 
     public Button closeButton;
 
     public TextField displayFieldResult;
     public TextField displayFieldMemory;
 
+
     private String bufferMemoryField;
     private String bufferResultField;
     private String tempValue;
     private String lastUsedSymbol;
     private String lastResultField;
+
+    private boolean statusClearResultField = true;
+    private boolean statusPerformCalcOperation = false;
 
     public void handleCloseWindow(ActionEvent actionEvent) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
@@ -33,9 +35,10 @@ public class Controller {
             statusClearResultField = true;
             statusPerformCalcOperation = true;
         } // reset result textField and perform action
-        if(getUsedSymbol(actionEvent).equals(Symbol.ONE)) {
+        if(getUsedSymbol(actionEvent).equals(Symbol.ZERO)) {
             displayFieldResult.setText(Symbol.ZERO);
         } else {
+            if(displayFieldResult.getText().equals(Symbol.ZERO)) {displayFieldResult.setText("");}
             tempValue = displayFieldResult.getText() + getUsedSymbol(actionEvent);
             bufferResultField =  tempValue;
             displayFieldResult.setText(bufferResultField);
@@ -44,6 +47,7 @@ public class Controller {
     }
 
     public void handleCalcOperation(ActionEvent actionEvent) {
+         
         if(statusPerformCalcOperation) { prepareOperation(); }
         lastResultField = bufferResultField;
         tempValue = bufferResultField + " " + getUsedSymbol(actionEvent) + " ";
@@ -51,6 +55,7 @@ public class Controller {
         lastUsedSymbol = getUsedSymbol(actionEvent);
         displayFieldMemory.setText(bufferMemoryField);
         statusClearResultField = false;
+
     }
 
     private String getUsedSymbol(ActionEvent event) {

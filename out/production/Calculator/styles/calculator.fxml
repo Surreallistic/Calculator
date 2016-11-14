@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
@@ -64,7 +65,7 @@
                   <Font name="Lucida Handwriting Italic" size="15.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="20.0" left="47.0" top="15.0" />
+                  <Insets bottom="50.0" left="43.0" top="15.0" />
                </GridPane.margin>
                <effect>
                   <Shadow blurType="TWO_PASS_BOX" color="RED">
