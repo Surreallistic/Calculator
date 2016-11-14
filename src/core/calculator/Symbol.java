@@ -1,4 +1,4 @@
-package Calculator;
+package core.calculator;
 
 /**
  * Created by Surreallistic on 13.11.2016.
