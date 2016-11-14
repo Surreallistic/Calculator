@@ -34,7 +34,7 @@ public class Controller {
             statusPerformCalcOperation = true;
         } // reset result textField and perform action
         if(getUsedSymbol(actionEvent).equals(Symbol.ONE)) {
-            displayFieldResult.setText("0");
+            displayFieldResult.setText(Symbol.ZERO);
         } else {
             tempValue = displayFieldResult.getText() + getUsedSymbol(actionEvent);
             bufferResultField =  tempValue;

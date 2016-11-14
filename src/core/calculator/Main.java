@@ -16,7 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../Styles/calculator.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../styles/calculator.fxml"));
         primaryStage.setTitle("Simple Calculator");
         primaryStage.setScene(new Scene(root));
         makeMovableWindow(root, primaryStage);
