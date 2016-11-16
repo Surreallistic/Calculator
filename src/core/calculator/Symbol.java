@@ -18,4 +18,5 @@ public interface Symbol {
     String MINUS = "-";
     String DIVIDE = "/";
     String MULTIPLY = "*";
+    String NONE = "";
 }

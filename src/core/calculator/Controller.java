@@ -8,16 +8,13 @@ import javafx.stage.Stage;
 public class Controller {
 
     //        currentResult = currentResult.replaceAll("\\D+",""); // get number, delete any other sign
-
     public Button closeButton;
 
     public TextField displayFieldResult;
     public TextField displayFieldMemory;
 
-
-    private String bufferMemoryField;
-    private String bufferResultField;
-    private String tempValue;
+    private String memoryFieldValue;
+    private String resultFieldValue;
     private String lastUsedSymbol;
     private String lastResultField;
 
@@ -30,45 +27,44 @@ public class Controller {
     }
 
     public void handleDigitalNumber(ActionEvent actionEvent) {
-        if(!statusClearResultField) {
-            displayFieldResult.setText("");
-            statusClearResultField = true;
-            statusPerformCalcOperation = true;
-        } // reset result textField and perform action
-        if(getUsedSymbol(actionEvent).equals(Symbol.ZERO)) {
-            displayFieldResult.setText(Symbol.ZERO);
-        } else {
-            if(displayFieldResult.getText().equals(Symbol.ZERO)) {displayFieldResult.setText("");}
-            tempValue = displayFieldResult.getText() + getUsedSymbol(actionEvent);
-            bufferResultField =  tempValue;
-            displayFieldResult.setText(bufferResultField);
-        }
+        handleDigitalNumberExceptions();
+        String newValue = displayFieldResult.getText() + getUsedSymbol(actionEvent);
+        resultFieldValue = newValue;
+        displayFieldResult.setText(resultFieldValue);
+    }
 
+    private void handleDigitalNumberExceptions() {
+        if (displayFieldResult.getText().equals(Symbol.ZERO)) {
+            displayFieldResult.setText(Symbol.NONE);
+        } // handle printing multiple zeros on the ResultTextField
     }
 
     public void handleCalcOperation(ActionEvent actionEvent) {
-         
-        if(statusPerformCalcOperation) { prepareOperation(); }
-        lastResultField = bufferResultField;
-        tempValue = bufferResultField + " " + getUsedSymbol(actionEvent) + " ";
-        if(bufferMemoryField == null) { bufferMemoryField = tempValue; } else { bufferMemoryField += tempValue; }
-        lastUsedSymbol = getUsedSymbol(actionEvent);
-        displayFieldMemory.setText(bufferMemoryField);
-        statusClearResultField = false;
 
     }
 
-    private String getUsedSymbol(ActionEvent event) {
-        return ((Button)event.getSource()).getText();
+    public void handleEqualOperation(ActionEvent actionEvent) {
+        if (lastResultField != null && lastResultField != Symbol.ZERO) {
+            resultFieldValue = Integer.toString(performOperation());
+            displayFieldResult.setText(resultFieldValue);
+        }
+    }
+
+    public void handleClearCalc(ActionEvent actionEvent) {
+        displayFieldMemory.setText("");
+        displayFieldResult.setText("0");
+        lastResultField = "0";
+        memoryFieldValue = "";
+        resultFieldValue = "";
     }
 
     private void prepareOperation() {
-        bufferResultField = Integer.toString(performOperation());
-        displayFieldResult.setText(bufferResultField);
+        resultFieldValue = Integer.toString(performOperation());
+        displayFieldResult.setText(resultFieldValue);
     }
 
     private int performOperation() {
-        int temp1 = Integer.parseInt(bufferResultField);
+        int temp1 = Integer.parseInt(resultFieldValue);
         int temp2 = Integer.parseInt(lastResultField);
         int result = 0;
 
@@ -86,20 +82,11 @@ public class Controller {
                 result = temp1 * temp2;
                 break;
         }
-
         return result;
     }
 
-    public void handleEqualOperation(ActionEvent actionEvent) {
-        bufferResultField = Integer.toString(performOperation());
-        displayFieldResult.setText(bufferResultField);
+    private String getUsedSymbol(ActionEvent event) {
+        return ((Button) event.getSource()).getText();
     }
 
-    public void handleClearCalc(ActionEvent actionEvent) {
-        displayFieldMemory.setText("");
-        displayFieldResult.setText("0");
-        bufferMemoryField = "";
-        bufferResultField = "";
-        lastResultField = "0";
-    }
 }
