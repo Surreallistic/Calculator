@@ -7,16 +7,15 @@ import javafx.stage.Stage;
 
 public class Controller {
 
-    //        currentResult = currentResult.replaceAll("\\D+",""); // get number, delete any other sign
     public Button closeButton;
 
-    public TextField displayFieldResult;
-    public TextField displayFieldMemory;
+    public TextField memoryField; // textField on the bottom
+    public TextField computeField; // textField on the top
 
-    private String memoryFieldValue;
-    private String resultFieldValue;
+    private String memoryValue;
+    private String computeValue;
     private String lastUsedSymbol;
-    private String lastResultField;
+    private String buffComputeValue; // buffer for computeValue
 
     private boolean statusClearResultField = true;
     private boolean statusPerformCalcOperation = false;
@@ -27,45 +26,57 @@ public class Controller {
     }
 
     public void handleDigitalNumber(ActionEvent actionEvent) {
-        handleDigitalNumberExceptions();
-        String newValue = displayFieldResult.getText() + getUsedSymbol(actionEvent);
-        resultFieldValue = newValue;
-        displayFieldResult.setText(resultFieldValue);
+        handleDigitalNumberRestrictions();
+        String newValue = computeField.getText() + getUsedSymbol(actionEvent);
+        computeValue = newValue;
+        computeField.setText(computeValue);
     }
-
-    private void handleDigitalNumberExceptions() {
-        if (displayFieldResult.getText().equals(Symbol.ZERO)) {
-            displayFieldResult.setText(Symbol.NONE);
-        } // handle printing multiple zeros on the ResultTextField
+    
+    private void handleDigitalNumberRestrictions() {
+        if (computeField.getText().equals(Symbol.ZERO)) {
+            computeField.setText(Symbol.NONE);
+        } // handle printing multiple zeros on the computeField
     }
 
     public void handleCalcOperation(ActionEvent actionEvent) {
+        if(checkLastUsedSymbol(actionEvent)) {
+            lastUsedSymbol = getUsedSymbol(actionEvent);
+        }
+
+
+    }
+
+    private boolean checkLastUsedSymbol(ActionEvent actionEvent) {
+        if(getUsedSymbol(actionEvent) != lastUsedSymbol) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private void getResultFromCalcOperation() {
 
     }
 
     public void handleEqualOperation(ActionEvent actionEvent) {
-        if (lastResultField != null && lastResultField != Symbol.ZERO) {
-            resultFieldValue = Integer.toString(performOperation());
-            displayFieldResult.setText(resultFieldValue);
-        }
+
     }
 
     public void handleClearCalc(ActionEvent actionEvent) {
-        displayFieldMemory.setText("");
-        displayFieldResult.setText("0");
-        lastResultField = "0";
-        memoryFieldValue = "";
-        resultFieldValue = "";
+        memoryField.setText("");
+        computeField.setText("0");
+        memoryValue = "";
+        computeValue = "";
     }
 
     private void prepareOperation() {
-        resultFieldValue = Integer.toString(performOperation());
-        displayFieldResult.setText(resultFieldValue);
+        computeValue = Integer.toString(performOperation());
+        computeField.setText(computeValue);
     }
 
     private int performOperation() {
-        int temp1 = Integer.parseInt(resultFieldValue);
-        int temp2 = Integer.parseInt(lastResultField);
+        int temp1 = Integer.parseInt(computeValue);
+        int temp2 = Integer.parseInt(buffComputeValue);
         int result = 0;
 
         switch (lastUsedSymbol) {

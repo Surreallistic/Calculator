@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.embed.swing.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.effect.*?>
@@ -43,7 +44,7 @@
             <Button maxHeight="60.0" maxWidth="70.0" minHeight="60.0" minWidth="70.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="70.0" stylesheets="@default.css" text="." GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
             <Button maxHeight="60.0" maxWidth="70.0" minHeight="60.0" minWidth="70.0" mnemonicParsing="false" onAction="#handleEqualOperation" prefHeight="60.0" prefWidth="70.0" stylesheets="@default.css" text="=" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
             <Button maxHeight="60.0" maxWidth="70.0" minHeight="60.0" minWidth="70.0" mnemonicParsing="false" onAction="#handleCalcOperation" prefHeight="60.0" prefWidth="70.0" stylesheets="@default.css" text="+" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-            <TextField id="text-field-result" fx:id="displayFieldResult" alignment="CENTER_RIGHT" editable="false" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@default.css" text="0" GridPane.columnSpan="5" GridPane.rowIndex="1">
+            <TextField id="text-field-result" fx:id="computeField" alignment="CENTER_RIGHT" editable="false" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@default.css" text="0" GridPane.columnSpan="5" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="20.0" left="60.0" right="60.0" />
                </GridPane.margin>
@@ -78,7 +79,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <TextField id="text-field-operation" fx:id="displayFieldMemory" alignment="CENTER_RIGHT" editable="false" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@default.css" GridPane.columnSpan="5">
+            <TextField id="text-field-operation" fx:id="memoryField" alignment="CENTER_RIGHT" editable="false" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" stylesheets="@default.css" GridPane.columnSpan="5">
                <GridPane.margin>
                   <Insets left="60.0" right="60.0" top="20.0" />
                </GridPane.margin>
